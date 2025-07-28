@@ -40,20 +40,33 @@ const Home = () => {
     try {
       console.log('🔄 Fetching data from API...');
       
-      // Test individual API calls
-      const profileRes = await profileAPI.get();
-      console.log('✅ Profile data:', profileRes.data);
+      // Fetch profile data with error handling
+      try {
+        const profileRes = await profileAPI.get();
+        console.log('✅ Profile data:', profileRes.data);
+        setProfile(profileRes.data.data);
+      } catch (profileError) {
+        if (profileError.response?.status === 404) {
+          console.log('ℹ️ No profile data found, using default values');
+          setProfile(null); // Will use default values in JSX
+        } else {
+          console.error('❌ Error fetching profile:', profileError);
+        }
+      }
       
-      const projectsRes = await projectAPI.getFeatured();
-      console.log('✅ Projects data:', projectsRes.data);
+      // Fetch projects data with error handling
+      try {
+        const projectsRes = await projectAPI.getFeatured();
+        console.log('✅ Projects data:', projectsRes.data);
+        setFeaturedProjects(projectsRes.data.data.slice(0, 3));
+      } catch (projectsError) {
+        console.error('❌ Error fetching projects:', projectsError);
+        setFeaturedProjects([]); // Empty array if no projects
+      }
       
-      setProfile(profileRes.data.data);
-      setFeaturedProjects(projectsRes.data.data.slice(0, 3));
-      
-      console.log('✅ Data fetched successfully');
+      console.log('✅ Data fetch completed');
     } catch (error) {
-      console.error('❌ Error fetching data:', error);
-      console.error('❌ Error details:', error.response?.data || error.message);
+      console.error('❌ Unexpected error fetching data:', error);
     }
   };
 
