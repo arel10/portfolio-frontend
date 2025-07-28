@@ -8,9 +8,9 @@ import {
   FaTrash, 
   FaSave,
   FaTimes,
-  FaCode,
-  FaStar,
-  FaChartBar
+  // FaCode,
+  // FaStar,
+  // FaChartBar
 } from 'react-icons/fa';
 import Button from '../../components/UI/Button';
 import LoadingSpinner from '../../components/UI/LoadingSpinner';

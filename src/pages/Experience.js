@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaCalendarAlt, FaBuilding, FaMapPin } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaBuilding } from 'react-icons/fa';
 import Card from '../components/UI/Card';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 import { experienceAPI } from '../services/api';

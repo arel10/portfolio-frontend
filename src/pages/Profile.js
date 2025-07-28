@@ -8,7 +8,7 @@ import {
   FaCalendarAlt,
   FaDownload,
   FaCode,
-  FaGraduationCap
+  // FaGraduationCap
 } from 'react-icons/fa';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
