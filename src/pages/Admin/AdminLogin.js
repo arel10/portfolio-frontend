@@ -155,21 +155,6 @@ const AdminLogin = () => {
                   </Button>
                 </form>
 
-                {/* Demo Credentials Info */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="mt-8 p-4 bg-dark-700/30 rounded-lg border border-game-primary/20"
-                >
-                  <h4 className="text-sm font-semibold text-neon-blue mb-2">
-                    Demo Credentials:
-                  </h4>
-                  <div className="text-sm text-gray-400 space-y-1">
-                    <p><strong>Username:</strong> admin</p>
-                    <p><strong>Password:</strong> admin123</p>
-                  </div>
-                </motion.div>
 
                 {/* Security Notice */}
                 <motion.div
